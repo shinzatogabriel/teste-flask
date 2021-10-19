@@ -1,0 +1,25 @@
+#completar o projeto com a função UPDATE
+
+{% extends "base.html" %}
+{% block title %}Editar Usuário{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Editar {{ user_to_update.name }}</h1>
+        <br>
+        <form action="/update/{{user_to_update.id}}" class="container" METHOD="PUT">
+            <div class=row>
+                <div class="col-md-6">
+                   <input type="text" name="name" id="name" placeholder="Nome" class="form-control" value="{{ user_to_update.name }}">
+                </div>
+                
+                <div class="col-md-6">
+                    <input type="text" name="email" id="email" placeholder="Email" class="form-control" value="{{ user_to_update.email }}">
+                </div>
+            </div>
+            <br>
+            <div class="row col-xs-12">
+                <button type="submit" value="update data" class="btn btn-outline-secondary btn-sm">Editar</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

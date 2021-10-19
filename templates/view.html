@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Visualizar todos os contatos{% endblock %}
+{% block content %}
+    {% for item in values %}
+        <h5>Id: {{item._id}}, Name: {{item.name}}, Email: {{item.email}}
+            <a href="/delete/{{ item.id }}" class="btn btn-outline-danger btn-sm">Deletar</a>
+            <a href="/update/{{ item.id }}" class="btn btn-outline-secondary btn-sm">Update</a>
+        </h5>
+    {% endfor %}
+{% endblock %}
